@@ -1,0 +1,230 @@
+:root {
+    --font-size: 20px;
+    --font-size-x-large: calc(var(--font-size) + 18px);
+    --font-size-xx-large: calc(var(--font-size) + 32px);
+}
+
+body {
+    margin: 0;
+    background-color: #FAFAFA;
+
+
+    font-size: var(--font-size);
+    font-family: Inter;
+    position: relative;
+}
+
+h1 {
+    font-size: var(--font-size-x-large);
+}
+
+h1, h3 {
+    font-family: Inter ExtraBold;
+    margin: 0;
+}
+
+
+
+.wave-divider {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 1;
+}
+
+.section-title {
+    text-align: center;
+    padding: 1ch 1ch 2ch 1ch;
+}
+
+
+
+
+#hero-section {
+    position: relative;
+    background-image: url(images/shark-header.png);
+    background-position: left;
+    background-size: cover;
+    padding: 16rem 2rem 26rem 20%;
+    display: grid;
+    justify-content: left;
+    color: whitesmoke;
+}
+
+#hero-section > div {
+    max-width: 450px;
+    h1 {
+        border-bottom: 2px solid white;
+        font-size: var(--font-size-xx-large);
+        strong {
+            color: transparent;
+            background: linear-gradient(90deg, cyan, rgb(3, 255, 150));
+            background-clip: text;
+
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.6ch;
+        }
+    }
+}
+
+
+#sharks-and-humans {
+    padding: 1rem 0rem 14rem 0rem;
+
+    position: relative;
+}
+
+
+#sharks-and-humans > div > #cards {
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    gap: 4ch;
+
+    place-content: center;
+
+    img {
+        width: 40ch;
+        height: 40ch;
+        border-radius: 2rem 2rem 0rem 0rem;
+    }
+    .card {
+        max-width: 40ch;
+        border: 2px solid #e6e6e6;
+        border-bottom: 1ch solid #e6e6e6;
+        border-radius: 2rem;
+
+        h3 {
+            text-align: center;
+            padding: 0ch 0ch 2rem 0ch;
+        }
+        p {
+            margin: 0;;
+            text-align: justify;
+            max-width: 30ch;
+        }
+        .img-text {
+            margin-top: -5px;
+            display: grid;
+            place-content: center;
+            justify-content: center;
+
+            min-height: 20ch;
+            background-color: #eeeeee;
+            border-radius: 0rem 0rem 1rem 1rem;
+        }
+    }
+}
+
+
+
+#want-to-help {
+    background-color: #387ADF;
+    text-align: center;
+    color: whitesmoke;
+
+    padding-bottom: 80px;
+
+    display: grid;
+    justify-items: center;
+
+    h1 {
+        padding-bottom: 0;
+    }
+    p {
+        margin-bottom: 40px;
+    }
+}
+
+
+#want-to-help > #org-disclaimer {
+    font-family: Inter ExtraBold;
+    color: #69bdf5;
+    max-width: 60rem;
+}
+
+
+#want-to-help > #orgs {
+    display: flex;
+    flex-direction: row;
+    gap: 2ch;
+
+    div {
+        max-width: 20rem;
+        background-color: #FAFAFA;
+        border: 2px solid #265eb1;
+        border-bottom: 1ch solid #265eb1;
+        color: black;
+
+        padding: 3rem 1.5rem 3rem 1.5rem;
+        text-align: justify;
+
+        border-radius: 1rem;
+        transition: 500ms ease-out;
+        cursor: default;
+    }
+
+    div:hover {
+        transform: scale(1.02);
+    }
+
+    div > h1 {
+        text-align: center;
+        font-family:Georgia, 'Times New Roman', Times, serif
+    }
+
+    div > h2 {
+        font-size: medium;
+        font-family: Inter Thin;
+        color: #b1b1b1;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+
+footer {
+
+    padding: 6rem 6rem 12rem 6rem;
+    display: flex;
+    flex-direction: column;
+
+    border-top: 1ch solid #265eb1;
+    background-color: black;
+    color: whitesmoke;
+
+    #main-container {
+        min-width: 60rem;
+        max-width: 60rem;
+        place-self: center;
+    }
+
+    #main-container > #sections {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        img {
+            width: 10ch;
+            height: min-content;
+            color: white;
+        }
+    }
+    h1 {
+        padding-bottom: 1rem;
+        color: #387ADF;
+    }
+}
+
+footer > #main-container > #sections > section {
+    display: flex;
+    flex-direction: column;
+    gap: 1ch;
+
+    a {
+        text-decoration: none;
+        color: whitesmoke;
+    }
+}
