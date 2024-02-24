@@ -19,7 +19,7 @@ h1 {
 }
 
 h1, h3 {
-    font-family: Inter ExtraBold;
+    font-family: Inter ExtraBold, sans-serif;
     margin: 0;
 }
 
@@ -140,7 +140,7 @@ h1, h3 {
 
 
 #want-to-help > #org-disclaimer {
-    font-family: Inter ExtraBold;
+    font-family: Inter ExtraBold, sans-serif;
     color: #69bdf5;
     max-width: 60rem;
 }
@@ -177,7 +177,7 @@ h1, h3 {
 
     div > h2 {
         font-size: medium;
-        font-family: Inter Thin;
+        font-family: Inter Thin, sans-serif;
         color: #b1b1b1;
         text-align: center;
         margin: 0;
