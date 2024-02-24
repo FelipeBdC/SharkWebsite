@@ -4,13 +4,15 @@
     --font-size-xx-large: calc(var(--font-size) + 32px);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 body {
     margin: 0;
     background-color: #FAFAFA;
 
 
     font-size: var(--font-size);
-    font-family: Inter;
+    font-family: "Inter";
     position: relative;
 }
 
@@ -19,7 +21,7 @@ h1 {
 }
 
 h1, h3 {
-    font-family: Inter ExtraBold;
+    font-family: "Inter ExtraBold";
     margin: 0;
 }
 
@@ -140,7 +142,7 @@ h1, h3 {
 
 
 #want-to-help > #org-disclaimer {
-    font-family: Inter ExtraBold;
+    font-family: "Inter ExtraBold";
     color: #69bdf5;
     max-width: 60rem;
 }
@@ -177,7 +179,7 @@ h1, h3 {
 
     div > h2 {
         font-size: medium;
-        font-family: Inter Thin;
+        font-family: "Inter Thin";
         color: #b1b1b1;
         text-align: center;
         margin: 0;
