@@ -17,20 +17,17 @@
 body {
     margin: 0;
     background-color: #FAFAFA;
-
-
     font-size: var(--font-size);
-    font-family: Inter, sans-serif;
     position: relative;
 }
 
 h1 {
     font-size: var(--font-size-x-large);
+    font-weight: 800;
 }
 
 h1, h2, h3 {
     cursor: default;
-    font-family: Inter ExtraBold, sans-serif;
     margin: 0;
 }
 
@@ -86,8 +83,8 @@ p {
             color: transparent;
             background: linear-gradient(90deg, cyan, rgb(3, 255, 150));
             background-clip: text;
-
-            font-family:Georgia, Times, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.6ch;
         }
     }
 }
@@ -155,7 +152,7 @@ p {
 }
 
 #want-to-help > #org-disclaimer {
-    font-family: Inter ExtraBold, sans-serif;
+    font-weight: 800;
     color: #69bdf5;
     max-width: 60rem;
 }
@@ -191,7 +188,7 @@ p {
 
         h2 {
             font-size: medium;
-            font-family: Inter Thin, sans-serif;
+            font-weight: 300;
             color: #b1b1b1;
             text-align: center;
             margin: 0;
