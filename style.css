@@ -1,5 +1,6 @@
 :root {
     --font-size: 20px;
+    --font-size-large: calc(var(--font-size) + 8px);
     --font-size-x-large: calc(var(--font-size) + 18px);
     --font-size-xx-large: calc(var(--font-size) + 32px);
 }
@@ -18,9 +19,14 @@ h1 {
     font-size: var(--font-size-x-large);
 }
 
-h1, h3 {
+h1, h2, h3 {
+    cursor: default;
     font-family: Inter ExtraBold, sans-serif;
     margin: 0;
+}
+
+p {
+    cursor: default;
 }
 
 
@@ -32,11 +38,20 @@ h1, h3 {
     right: 0;
     bottom: 0;
     top: 1;
+
+    margin-bottom: -1px;
 }
 
 .section-title {
     text-align: center;
     padding: 1ch 1ch 2ch 1ch;
+}
+
+.obj-position-bottom {
+    object-position: bottom;
+}
+.obj-position-vert-20 {
+    object-position: center 20%;
 }
 
 
@@ -45,9 +60,9 @@ h1, h3 {
 #hero-section {
     position: relative;
     background-image: url(images/shark-header.png);
-    background-position: left;
+    background-position: 10%;
     background-size: cover;
-    padding: 16rem 2rem 26rem 20%;
+    padding: 25vh 2rem 35vh 20%;
     display: grid;
     justify-content: left;
     color: whitesmoke;
@@ -71,49 +86,44 @@ h1, h3 {
 
 
 #sharks-and-humans {
-    padding: 1rem 0rem 14rem 0rem;
-
+    padding: 1rem 1rem 15ch 1rem;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 
 #sharks-and-humans > div > #cards {
-    cursor: default;
-    display: flex;
-    flex-direction: row;
-    gap: 4ch;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    max-width: 100ch;
 
-    place-content: center;
 
-    img {
-        width: 40ch;
-        height: 40ch;
-        border-radius: 2rem 2rem 0rem 0rem;
-    }
     .card {
-        max-width: 40ch;
         border: 2px solid #e6e6e6;
+        background-color: #eeeeee;
         border-bottom: 1ch solid #e6e6e6;
         border-radius: 2rem;
 
-        h3 {
-            text-align: center;
-            padding: 0ch 0ch 2rem 0ch;
-        }
-        p {
-            margin: 0;;
-            text-align: justify;
-            max-width: 30ch;
+        img {
+            width: 100%;
+            border-radius: 2rem 2rem 0rem 0rem;
         }
         .img-text {
-            margin-top: -5px;
-            display: grid;
-            place-content: center;
-            justify-content: center;
-
-            min-height: 20ch;
-            background-color: #eeeeee;
+            font-size: 2vh;
+            padding: 2ch;
             border-radius: 0rem 0rem 1rem 1rem;
+
+            h3 {
+                font-size: var(--font-size-large);
+                padding-bottom: 1ch;
+                text-align: center;
+            }
+            p {
+                margin: 0;
+                text-align: justify;
+            }
         }
     }
 }
@@ -124,9 +134,7 @@ h1, h3 {
     background-color: #387ADF;
     text-align: center;
     color: whitesmoke;
-
     padding-bottom: 80px;
-
     display: grid;
     justify-items: center;
 
@@ -138,93 +146,160 @@ h1, h3 {
     }
 }
 
-
 #want-to-help > #org-disclaimer {
     font-family: Inter ExtraBold, sans-serif;
     color: #69bdf5;
     max-width: 60rem;
 }
 
-
 #want-to-help > #orgs {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90ch;
     gap: 2ch;
 
     div {
-        max-width: 20rem;
+        width: 25%;
         background-color: #FAFAFA;
         border: 2px solid #265eb1;
         border-bottom: 1ch solid #265eb1;
         color: black;
-
         padding: 3rem 1.5rem 3rem 1.5rem;
         text-align: justify;
-
         border-radius: 1rem;
         transition: 500ms ease-out;
-        cursor: default;
-    }
+        cursor: pointer;
 
-    div:hover {
-        transform: scale(1.02);
-    }
+        &:hover {
+            transform: scale(1.02);
+        }
 
-    div > h1 {
-        text-align: center;
-        font-family:Georgia, 'Times New Roman', Times, serif
-    }
+        h1 {
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif
+        }
 
-    div > h2 {
-        font-size: medium;
-        font-family: Inter Thin, sans-serif;
-        color: #b1b1b1;
-        text-align: center;
-        margin: 0;
+        h2 {
+            font-size: medium;
+            font-family: Inter Thin, sans-serif;
+            color: #b1b1b1;
+            text-align: center;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+            margin-top: 2ch;
+        }
     }
 }
 
 
 footer {
-
-    padding: 6rem 6rem 12rem 6rem;
-    display: flex;
-    flex-direction: column;
-
+    padding: 4ch 1ch 8ch 1ch;
     border-top: 1ch solid #265eb1;
     background-color: black;
     color: whitesmoke;
 
-    #main-container {
-        min-width: 60rem;
-        max-width: 60rem;
-        place-self: center;
+    display: flex;
+    justify-content: center;
+
+    h1 {
+        color: #387ADF;
     }
+    a {
+        --border-radius: 1rem;
 
-    #main-container > #sections {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
+        text-decoration: none;
+        color: whitesmoke;
+        border: 2px solid black;
+        border-radius: var(--border-radius);
+        padding: 1ch;
+        transition: 200ms;
 
-        img {
-            width: 10ch;
-            height: min-content;
-            color: white;
+        &:hover {
+            border: 2px solid whitesmoke;
+            border-radius: var(--border-radius);
         }
     }
-    h1 {
-        padding-bottom: 1rem;
-        color: #387ADF;
+    img {
+        width: 20%;
+        place-self: center;
+        margin-top: 4ch;
+    }
+
+    #links {
+        display: flex;
+        justify-content: center;
+        gap: 1ch;
+    }
+
+    #main-container {
+        max-width: 60ch;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1ch;
     }
 }
 
-footer > #main-container > #sections > section {
-    display: flex;
-    flex-direction: column;
-    gap: 1ch;
 
-    a {
-        text-decoration: none;
-        color: whitesmoke;
+
+
+@media (max-width: 500px) {
+    :root {
+        --font-size: 16px;
+        --font-size-x-large: calc(var(--font-size) + 10px);
+        --font-size-xx-large: calc(var(--font-size) + 24px);
+    }
+
+    #hero-section {
+        padding: 25vh 1rem 30vh 1rem;
+    }
+
+
+    #sharks-and-humans {
+        padding: 1vh 4vw 10vh 4vw;
+    }
+
+    #sharks-and-humans > div > #cards {
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+    }
+
+    #sharks-and-humans > div > #cards > .card {
+        img {
+            height: 25ch;
+            object-fit: cover;
+        }
+    }
+
+
+    #want-to-help {
+        padding: 40px 4ch 0px 4ch;
+    }
+    
+    #want-to-help > #orgs {
+
+        div {
+            padding: 2ch;
+            width: 100%;
+            height: min-content;
+
+            p {
+                margin: 2ch;
+            }
+        }
+    }
+
+    footer > #main-container > #links {
+        flex-direction: column;
+        place-self: center;
+        gap: 0;
+
+        max-width: min-content;
     }
 }
