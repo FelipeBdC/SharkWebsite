@@ -1,5 +1,7 @@
 :root {
-    --font-size: 20px;
+    --font-size: 3vh;
+    --font-size-x-small: calc(var(--font-size) - 8px);
+    --font-size-small: calc(var(--font-size) - 4px);
     --font-size-large: calc(var(--font-size) + 8px);
     --font-size-x-large: calc(var(--font-size) + 18px);
     --font-size-xx-large: calc(var(--font-size) + 32px);
@@ -102,7 +104,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1vw;
-    max-width: 100ch;
+    max-width: 80ch;
 
 
     .card {
@@ -116,12 +118,10 @@ p {
             border-radius: 2rem 2rem 0rem 0rem;
         }
         .img-text {
-            font-size: 2vh;
             padding: 2ch;
             border-radius: 0rem 0rem 1rem 1rem;
 
             h3 {
-                font-size: var(--font-size-large);
                 padding-bottom: 1ch;
                 text-align: center;
             }
@@ -151,29 +151,32 @@ p {
     }
 }
 
+#want-to-help {
+    p {
+        margin-bottom: 4ch;
+    }
+}
+
 #want-to-help > #org-disclaimer {
     font-weight: 800;
     color: #69bdf5;
-    max-width: 60rem;
 }
 
 #want-to-help > #orgs {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-    max-width: 90ch;
-    gap: 2ch;
+    max-width: 80ch;
+    gap: 1ch;
 
     div {
-        width: 25%;
         background-color: #FAFAFA;
+        color: black;
         border: 2px solid #265eb1;
         border-bottom: 1ch solid #265eb1;
-        color: black;
+        border-radius: 1rem;
         padding: 3rem 1.5rem 3rem 1.5rem;
         text-align: justify;
-        border-radius: 1rem;
         transition: 500ms ease-out;
         cursor: pointer;
 
@@ -187,16 +190,15 @@ p {
         }
 
         h2 {
-            font-size: medium;
+            font-size: var(--font-size-small);
             font-weight: 300;
             color: #b1b1b1;
             text-align: center;
             margin: 0;
         }
-
         p {
-            margin: 0;
-            margin-top: 2ch;
+            font-size: var(--font-size);
+            margin-top: 4ch;
         }
     }
 }
@@ -282,29 +284,35 @@ footer {
         }
     }
 
-
-    #want-to-help {
-        padding: 40px 4ch 0px 4ch;
-    }
-    
-    #want-to-help > #orgs {
-
-        div {
-            padding: 2ch;
-            width: 100%;
-            height: min-content;
-
-            p {
-                margin: 2ch;
-            }
-        }
-    }
-
     footer > #main-container > #links {
         flex-direction: column;
         place-self: center;
         gap: 0;
 
         max-width: min-content;
+    }
+}
+
+@media (max-width: 900px) {
+    #want-to-help {
+        padding: 40px 4ch 0px 4ch;
+    }
+    
+    #want-to-help > #orgs {
+        flex-direction: column;
+        div {
+            padding: 2ch;
+            height: min-content;
+
+            p {
+                margin-top: 2ch;
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1150px) {
+    #want-to-help {
+        padding: 0 4ch 0 4ch;
     }
 }
