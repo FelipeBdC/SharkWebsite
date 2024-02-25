@@ -78,8 +78,7 @@ p {
             background: linear-gradient(90deg, cyan, rgb(3, 255, 150));
             background-clip: text;
 
-            font-family:'Times New Roman', Times, serif;
-            font-size: 2ch;
+            font-family:Georgia, Times, serif;
         }
     }
 }
