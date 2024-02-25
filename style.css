@@ -1,5 +1,6 @@
 :root {
     --font-size: 20px;
+    --font-size-large: calc(var(--font-size) + 8px);
     --font-size-x-large: calc(var(--font-size) + 18px);
     --font-size-xx-large: calc(var(--font-size) + 32px);
 }
@@ -32,11 +33,20 @@ h1, h3 {
     right: 0;
     bottom: 0;
     top: 1;
+
+    margin-bottom: -1px;
 }
 
 .section-title {
     text-align: center;
     padding: 1ch 1ch 2ch 1ch;
+}
+
+.obj-position-bottom {
+    object-position: bottom;
+}
+.obj-position-vert-20 {
+    object-position: center 20%;
 }
 
 
@@ -71,46 +81,45 @@ h1, h3 {
 
 
 #sharks-and-humans {
-    padding: 1rem 0rem 14rem 0rem;
+    padding: 1rem 1rem 15ch 1rem;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 
 #sharks-and-humans > div > #cards {
     cursor: default;
-    display: flex;
-    flex-direction: row;
-    gap: 4ch;
-    place-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    max-width: 100ch;
 
-    img {
-        width: 40ch;
-        height: 40ch;
-        border-radius: 2rem 2rem 0rem 0rem;
-    }
+
     .card {
-        max-width: 40ch;
         border: 2px solid #e6e6e6;
+        background-color: #eeeeee;
         border-bottom: 1ch solid #e6e6e6;
         border-radius: 2rem;
 
-        h3 {
-            text-align: center;
-            padding: 0ch 0ch 2rem 0ch;
-        }
-        p {
-            margin: 0;;
-            text-align: justify;
-            max-width: 30ch;
+        img {
+            width: 100%;
+            border-radius: 2rem 2rem 0rem 0rem;
         }
         .img-text {
-            margin-top: -5px;
-            display: grid;
-            place-content: center;
-            justify-content: center;
-            min-height: 20ch;
-            background-color: #eeeeee;
+            font-size: 2vh;
+            padding: 2ch;
             border-radius: 0rem 0rem 1rem 1rem;
+
+            h3 {
+                font-size: var(--font-size-large);
+                padding-bottom: 1ch;
+                text-align: center;
+            }
+            p {
+                margin: 0;
+                text-align: justify;
+            }
         }
     }
 }
@@ -223,7 +232,7 @@ footer > #main-container > #sections > section {
 
 
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     :root {
         --font-size: 16px;
         --font-size-x-large: calc(var(--font-size) + 10px);
@@ -232,5 +241,23 @@ footer > #main-container > #sections > section {
 
     #hero-section {
         padding: 25vh 1rem 30vh 1rem;
+    }
+
+
+    #sharks-and-humans {
+        padding: 1vh 4vw 10vh 4vw;
+    }
+
+    #sharks-and-humans > div > #cards {
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+    }
+
+    #sharks-and-humans > div > #cards > .card {
+        img {
+            height: 25ch;
+            object-fit: cover;
+        }
     }
 }
