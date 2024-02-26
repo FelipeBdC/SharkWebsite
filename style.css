@@ -38,10 +38,15 @@ p {
     cursor: default;
 }
 
+img {
+    border-radius: 16px;
+}
+
 
 
 .wave-divider {
     position: absolute;
+    border-radius: 0;
 
     left: 0;
     right: 0;
@@ -307,7 +312,10 @@ footer {
     }
 
     #hero-section {
-        padding: 25vh 1rem 30vh 1rem;
+        display: grid;
+        place-content: center;
+        padding: 25vh 0rem 30vh 0rem;
+        text-align: center;
     }
 
 
