@@ -170,7 +170,7 @@ p {
                 bottom: 0;
                 top: 1;
                 img {
-                    width: 2rem;
+                    width: 2ch;
                     height: auto;
                 }
             }
