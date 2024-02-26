@@ -5,6 +5,7 @@
     --font-size-large: calc(var(--font-size) + 8px);
     --font-size-x-large: calc(var(--font-size) + 18px);
     --font-size-xx-large: calc(var(--font-size) + 32px);
+    --border-radius: 1rem;
 
     font-family: Inter, sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1;
@@ -77,7 +78,7 @@ p {
 }
 
 #hero-section > div {
-    max-width: 450px;
+    max-width: 27ch;
     h1 {
         border-bottom: 2px solid white;
         font-size: var(--font-size-xx-large);
@@ -112,22 +113,38 @@ p {
         background-color: #eeeeee;
         border-bottom: 1ch solid #e6e6e6;
         border-radius: 2rem;
+        position: relative;
 
         img {
             width: 100%;
+            height: 20ch;
+            object-fit: cover;
             border-radius: 2rem 2rem 0rem 0rem;
         }
         .img-text {
-            padding: 2ch;
+            padding: 1.5ch;
             border-radius: 0rem 0rem 1rem 1rem;
 
             h3 {
-                padding-bottom: 1ch;
                 text-align: center;
             }
             p {
-                margin: 0;
                 text-align: justify;
+                min-height: 12ch;
+                margin: 1ch 0ch 1ch 0;
+            }
+            a {
+                margin-left: 1.6ch;
+                margin-bottom: 1ch;
+                position: absolute;
+                left: 0;
+                right: 1;
+                bottom: 0;
+                top: 1;
+                img {
+                    width: 2rem;
+                    height: auto;
+                }
             }
         }
     }
@@ -217,7 +234,6 @@ footer {
         color: #387ADF;
     }
     a {
-        --border-radius: 1rem;
 
         text-decoration: none;
         color: whitesmoke;
@@ -255,7 +271,7 @@ footer {
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     :root {
         --font-size: 16px;
         --font-size-x-large: calc(var(--font-size) + 10px);
@@ -275,6 +291,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 4vh;
+        max-width: 40ch;
     }
 
     #sharks-and-humans > div > #cards > .card {
